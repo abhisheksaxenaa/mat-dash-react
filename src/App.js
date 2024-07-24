@@ -29,6 +29,8 @@ import Presentation from "layouts/pages/presentation";
 // Material Kit 2 React routes
 import routes from "routes";
 
+import { TraceEvent } from "trace-event";
+
 export default function App() {
   const { pathname } = useLocation();
 
@@ -36,6 +38,8 @@ export default function App() {
   useEffect(() => {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
+    const traceEvent = new TraceEvent("someapikey32bitrandomlyassigned");
+    traceEvent.initialize();
   }, [pathname]);
 
   const getRoutes = (allRoutes) =>
