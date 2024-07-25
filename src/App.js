@@ -38,7 +38,15 @@ export default function App() {
   useEffect(() => {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
-    const traceEvent = new TraceEvent("someapikey32bitrandomlyassigned");
+    // Applying package changes
+    const traceEvent = new TraceEvent(
+      "1fI4SxneQu26epS9hNVH9OEyVwwTyAH5V71i4DUJkSG6GaG66NPOfjMWh6rm1c0b",
+      {
+        backend: {
+          baseUrl: "http://127.0.0.1:4000/api/v1",
+        },
+      }
+    );
     traceEvent.initialize();
   }, [pathname]);
 
